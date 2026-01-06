@@ -1,41 +1,13 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Navbar from "./components/Navbar";
 
 export default function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="p-10">
-      {/* Title */}
-      <div className="text-4xl font-bold mb-8">NSS BITM</div>
-
-      {/* Logos */}
-      <div className="flex gap-6 mb-6">
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-
-      {/* Content */}
-      <h1 className="text-2xl mb-4">Vite + React</h1>
-
-      <div className="card mb-4">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+      <Navbar />
+      <main>
+        {/* landing page sections will go here */}
+        <section id="home" className="min-h-[60vh]" />
+      </main>
+    </>
   );
 }
