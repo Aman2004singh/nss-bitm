@@ -2,7 +2,7 @@ export default function Hero() {
     return (
         <section id="home" className="w-full">
             {/* thin top red line */}
-            <div className="h-[4px] w-full bg-[#F6170F]" />
+            <div className="w-full bg-[#F6170F]" />
 
             <div className="relative w-full">
                 {/* background image */}
@@ -53,7 +53,7 @@ export default function Hero() {
                         </p>
                     </div>
                 </div>
-                <div className="h-[4px] w-full bg-[#F6170F]" />
+               
             </div>
         </section>
     );

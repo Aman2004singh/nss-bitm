@@ -13,7 +13,7 @@ function GovernmentSchemes() {
     <div className="w-full min-h-screen bg-gray-50 font-sans">
 
       {/* Top Accent Border */}
-      <div className="w-full h-1.5 bg-linear-to-r from-red-600 via-red-500 to-red-800" />
+      <div className="w-full  bg-linear-to-r from-red-600 via-red-500 to-red-800" />
 
       {/* Hero Section */}
       <div className="relative w-full h-[280px] sm:h-[380px] lg:h-[480px] overflow-hidden">

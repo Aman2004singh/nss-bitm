@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
 import Hero from "./components/Hero";
-import Notices from "./components/Notices";
 import Message from "./components/Message";
 import AboutUs from "./components/AboutUs";
 import ActivityPage from "./components/ActivityPage";
 import GovernmentSchemes from "./pages/GovernmentSchemes";
+import Events from "./components/Events";
 
 export default function App() {
   return (
@@ -17,11 +17,12 @@ export default function App() {
           element={
             <>
               <Hero />
-              <Notices />
               <Message />
             </>
           }
         />
+        <Route path="/notice" element={<Message />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/activity/:domainId" element={<ActivityPage />} />
         <Route path="/schemes" element={<GovernmentSchemes />} />
