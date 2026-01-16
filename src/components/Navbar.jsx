@@ -1,7 +1,28 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { NavLink } from "react-router-dom";
 
-function NavItem({ label, to}) {
+function NavItem({ label, to }) {
+  // Hash / anchor links
+  if (to.startsWith("#")) {
+    return (
+      <a
+        href={to}
+        className={[
+          "block",
+          "px-4 py-3 sm:px-6",
+          "text-white",
+          "text-xs sm:text-sm font-semibold uppercase",
+          "transition-colors duration-150",
+          "hover:text-white",
+          "hover:bg-[#F6170F]",
+        ].join(" ")}
+      >
+        {label}
+      </a>
+    );
+  }
+
+  // Route links
   return (
     <NavLink
       to={to}
@@ -14,7 +35,7 @@ function NavItem({ label, to}) {
           "transition-colors duration-150",
           "hover:text-white",
           "hover:bg-[#F6170F]",
-          isActive ? "bg-[#F6170F]" : "", 
+          isActive ? "bg-[#F6170F]" : "",
         ].join(" ")
       }
     >
@@ -27,9 +48,9 @@ export default function Navbar() {
   const nav = useMemo(
     () => [
       { label: "Home", to: "/" },
-      { label: "Notice", to: "/notice" },
-      { label: "Events", to: "/events" },
-      { label: "Contributions", to: "/contributions" },
+      { label: "Notice", to: "/" },
+      { label: "Events", to: "#events" },
+      { label: "Contributions", to: "#contributions" },
       { label: "Government Schemes", to: "/schemes" },
       { label: "About Us", to: "/about" },
     ],
@@ -40,7 +61,7 @@ export default function Navbar() {
     <header className="w-full">
       <div className="w-full px-0 pt-0">
         <div className="w-full overflow-hidden bg-white ring-1 ring-slate-200 shadow-[0_10px_40px_rgba(0,0,0,0.10)]">
-          
+
           {/* Logos row */}
           <div className="bg-white px-6 sm:px-10 py-6">
             <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-6">
@@ -55,9 +76,8 @@ export default function Navbar() {
 
           {/* Nav row */}
           <div className="relative bg-[#19366b]">
-            <div className="absolute right-0 top-0 h-full w-4px bg-[#F6170F]" />
+            <div className="absolute right-0 top-0 h-full w-[4px] bg-[#F6170F]" />
 
-            {/* 2 rows on mobile, single row on desktop */}
             <nav className="grid grid-cols-3 sm:grid-cols-6 items-center text-center">
               {nav.map((item) => (
                 <NavItem
